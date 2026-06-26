@@ -1,0 +1,7 @@
+.obsidian/
+app/
+node_modules/
+.DS_Store
+Gemfile.lock
+_site/
+.jekyll-cache/

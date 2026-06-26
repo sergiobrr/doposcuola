@@ -1,0 +1,23 @@
+title: "Doposcuola App"
+description: "Documentazione di analisi e progettazione dell'applicazione mobile per la gestione del doposcuola"
+remote_theme: just-the-docs/just-the-docs@v0.10.0
+
+url: "https://sergiobrr.github.io"
+baseurl: "/doposcuola"
+
+# Navigazione
+nav_sort: case_insensitive
+search_enabled: true
+heading_anchors: true
+
+# Footer
+footer_content: "Doposcuola App — Documentazione di progetto"
+
+# Colori
+color_scheme: light
+
+# Esclude file non necessari
+exclude:
+  - "*.sh"
+  - "Gemfile"
+  - "Gemfile.lock"
