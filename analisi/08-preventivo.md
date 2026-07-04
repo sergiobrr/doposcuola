@@ -272,32 +272,6 @@ Stripe non ha costi fissi mensili. Addebita solo sulle transazioni effettivament
 | Stripe Customer Portal | Gratuito |
 | Bonifico bancario (SEPA) | 0,2% (min €0,20, max €5,00) |
 
-#### Simulazione costi Stripe per scenario
-
-**Scenario: 30 studenti, quota mensile €120 cadauno**
-
-| Voce | Calcolo | Importo |
-|------|---------|---------|
-| Incasso mensile | 30 × €120 | €3.600 |
-| Commissione % | 1,5% di €3.600 | €54,00 |
-| Commissione fissa | €0,25 × 30 transazioni | €7,50 |
-| Stripe Billing (+0,5%) | 0,5% di €3.600 | €18,00 |
-| **Totale commissioni Stripe/mese** | | **€79,50** |
-| **Netto incassato** | | **€3.520,50** |
-| **Incidenza %** | | **2,2%** |
-
-**Scenario: 30 studenti, quota annuale €400 cadauno (pagamento unico)**
-
-| Voce | Calcolo | Importo |
-|------|---------|---------|
-| Incasso annuale | 30 × €400 | €12.000 |
-| Commissione % | 1,5% di €12.000 | €180,00 |
-| Commissione fissa | €0,25 × 30 transazioni | €7,50 |
-| **Totale commissioni Stripe/anno** | | **€187,50** |
-| **Incidenza %** | | **1,6%** |
-
-> Pagamento annuale unico = commissione più bassa (no +0,5% Billing). Se i genitori accettano il pagamento annuale, conviene.
-
 **Alternativa SEPA Debit:** per ridurre i costi puoi abilitare i pagamenti tramite addebito SEPA diretto (0,2%, massimo €5). Più lento da configurare e richiede il mandato firmato dal genitore, ma può dimezzare i costi su importi superiori a €100.
 
 ---
@@ -376,13 +350,11 @@ Firebase fornisce domini gratuiti (`*.web.app`, `*.firebaseapp.com`) sufficienti
 
 #### Variabili (mensili, dipendono dal volume)
 
-| Scenario | Firebase | Stripe (30 studenti €120/mese) | Fatturazione elettronica | **Totale/mese** |
-|----------|---------|-------------------------------|--------------------------|----------------|
-| Avvio (20 studenti) | €0 | ~€50 | — | **~€50/mese** |
-| Crescita (50 studenti) | €1 | ~€130 | — | **~€131/mese** |
-| Maturo (100 studenti) | €5 | ~€260 | €3 | **~€268/mese** |
-
-> I costi Stripe sono commissioni su incassi, non uscite nette: vengono già detratti automaticamente dai bonifici di Stripe verso il tuo conto.
+| Servizio | Costo |
+|----------|-------|
+| Firebase | €0–18/mese (vedi tabella sizing sopra) |
+| Stripe | % sul transato — detratta automaticamente da ogni bonifico |
+| Fatturazione elettronica (se implementata) | €2–7/mese |
 
 ---
 
@@ -391,14 +363,10 @@ Firebase fornisce domini gratuiti (`*.web.app`, `*.firebaseapp.com`) sufficienti
 | Voce | Importo |
 |------|---------|
 | Sviluppo (con buffer) | €4.537 |
-| Una tantum pre-lancio | €35 |
-| Apple Developer (1 anno) | €99 |
-| Firebase + Stripe (12 mesi, scenario avvio) | ~€600 |
-| **Totale primo anno** | **~€5.271** |
+| Google Play Store (una tantum) | €25 |
+| Apple Developer Program (1 anno) | €99 |
+| Dominio (opzionale, 1 anno) | €10 |
+| Firebase (12 mesi) | €0–216 |
+| **Totale primo anno** | **~€4.671–4.887** |
 
-Dal secondo anno in poi:
-| Voce | Importo/anno |
-|------|-------------|
-| Apple Developer | €99 |
-| Firebase + Stripe (scenario 50 studenti) | ~€1.572 |
-| **Totale anni successivi** | **~€1.671/anno** |
+> Stripe non è incluso: le commissioni sono trattenute direttamente sul transato e non costituiscono una spesa separata dal servizio.
