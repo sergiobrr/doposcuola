@@ -59,6 +59,7 @@ App
 │   │   ├── iscrizione
 │   │   └── [studentId]/calendario
 │   ├── pagamenti
+│   │   └── checkout/:iscrizioneId   (descrizione servizio + prosegui a Stripe)
 │   ├── avvisi
 │   ├── comunicazioni
 │   └── profilo
@@ -136,7 +137,9 @@ ComunicazioniStore → thread aperti, messaggi non letti
 4. Insegnante riceve notifica nuova iscrizione in attesa
 5. Insegnante approva/rifiuta (/teacher/iscrizioni)
 6. Se approvata → Stripe Payment Intent creato
-7. Genitore completa pagamento (/parent/pagamenti)
+7. Genitore apre /parent/pagamenti → preme "Paga ora"
+8. Pagina descrizione servizio (/parent/pagamenti/checkout/:iscrizioneId)
+9. Genitore preme "Prosegui" → Stripe Payment Sheet nativo
 8. Webhook Stripe → Cloud Function aggiorna stato su Firestore
 9. Studente diventa attivo → può accedere a /student
 ```

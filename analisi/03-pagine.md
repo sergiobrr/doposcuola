@@ -182,9 +182,13 @@ Lista dei figli associati al genitore.
 
 ### Pagamenti (`/parent/pagamenti`)
 - Lista pagamenti: data, importo, stato, descrizione
-- Pulsante "Paga ora" per quote in attesa
-- Redirect a Stripe Payment Sheet nativo
+- Pulsante "Paga ora" per quote in attesa → redirect a pagina di checkout
 - Accesso al Stripe Customer Portal (gestione carta)
+
+**Checkout (`/parent/pagamenti/checkout/:iscrizioneId`)**
+- Pagina statica con descrizione del servizio (testo, orari, modalità)
+- Riepilogo importo e tipo iscrizione
+- Pulsante "Prosegui" → apre Stripe Payment Sheet nativo
 
 ### Bacheca Avvisi (`/parent/avvisi`)
 - Lista avvisi pubblicati dall'insegnante, ordinati per data (fissati in cima)

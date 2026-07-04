@@ -98,10 +98,11 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | Iscrizione nuovo figlio (form + invio richiesta) | 4h | 3h |
 | Calendario figlio (sola lettura + crea evento + toggle permesso studente) | 5h | 3.5h |
 | Pagamenti (lista, Stripe Payment Sheet nativo, Customer Portal) | 7h | 5h |
+| Checkout: pagina descrizione servizio + prosegui a Stripe | 2h | 1h |
 | Bacheca Avvisi (lettura, segna letto) | 2h | 1.5h |
 | Comunicazioni — lista thread + risposta (riusa componenti chat) | 4h | 2.5h |
 | Profilo genitore (dati, cambio password, consenso notifiche) | 2h | 1.5h |
-| **Totale Fase 5** | **29h** | **20h** |
+| **Totale Fase 5** | **31h** | **21h** |
 
 ---
 
@@ -153,11 +154,11 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | 2 — Autenticazione | 14h | 10h | €250 |
 | 3 — Cloud Functions Backend | 33h | 23h | €575 |
 | 4 — Area Insegnante | 90h | 64h | €1.600 |
-| 5 — Area Genitore | 29h | 20h | €500 |
+| 5 — Area Genitore | 31h | 21h | €525 |
 | 6 — Area Studente | 10h | 6.5h | €162 |
 | 7 — Testing & Rifinitura | 27h | 22.5h | €562 |
 | 8 — Deploy & Release | 13h | 13h | €325 |
-| **TOTALE** | **234h** | **171.5h** | **€4.287** |
+| **TOTALE** | **236h** | **172.5h** | **€4.312** |
 
 ---
 
@@ -212,9 +213,9 @@ Totale ore: **165.5h → 21 weekend** (arrotondato per sicurezza).
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (171.5h × €25) | €4.287 |
+| Sviluppo (172.5h × €25) | €4.312 |
 | Buffer rischi (16h × €25) | €400 |
-| **Totale stimato** | **€4.687** |
+| **Totale stimato** | **€4.712** |
 
 ---
 
@@ -363,11 +364,11 @@ Firebase fornisce domini gratuiti (`*.web.app`, `*.firebaseapp.com`) sufficienti
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (con buffer) | €4.687 |
+| Sviluppo (con buffer) | €4.712 |
 | Google Play Store (una tantum) | €25 |
 | Apple Developer Program (1 anno) | €99 |
 | Dominio (opzionale, 1 anno) | €10 |
 | Firebase (12 mesi) | €0–216 |
-| **Totale primo anno** | **~€4.821–5.037** |
+| **Totale primo anno** | **~€4.846–5.062** |
 
 > Stripe non è incluso: le commissioni sono trattenute direttamente sul transato e non costituiscono una spesa separata dal servizio.

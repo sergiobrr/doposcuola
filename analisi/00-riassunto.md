@@ -86,13 +86,13 @@ Collezioni principali: `users`, `studenti`, `iscrizioni`, `eventi`, `presenze`, 
 | 2 | Autenticazione + onboarding push | 10h | €250 |
 | 3 | Cloud Functions + Stripe + notifiche + Security Rules | 23h | €575 |
 | 4 | Area insegnante completa | 64h | €1.600 |
-| 5 | Area genitore | 20h | €500 |
+| 5 | Area genitore | 21h | €525 |
 | 6 | Area studente | 6.5h | €162 |
 | 7 | Test + bug fixing + performance | 22.5h | €562 |
 | 8 | Deploy App Store + Google Play | 13h | €325 |
-| **Totale** | | **171.5h** | **€4.287** |
+| **Totale** | | **172.5h** | **€4.312** |
 
-Con buffer rischi: **€4.687**
+Con buffer rischi: **€4.712**
 
 **Inizio:** weekend del 5 luglio 2026 — **Fine stimata: novembre 2026**
 
@@ -102,7 +102,7 @@ Con buffer rischi: **€4.687**
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (con buffer) | €4.687 |
+| Sviluppo (con buffer) | €4.712 |
 | Google Play (una tantum) | €25 |
 | Apple Developer | €99/anno |
 | Firebase | €0–216/anno |
