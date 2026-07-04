@@ -12,6 +12,7 @@ Applicazione mobile per la gestione di un servizio di doposcuola, sviluppata con
 
 | Documento | Descrizione |
 |-----------|-------------|
+| [Riassunto](./00-riassunto.md) | Panoramica sintetica dell'intero progetto |
 | [Stack Tecnologico](./01-stack-tecnologico.md) | Framework, librerie, servizi cloud e motivazioni delle scelte |
 | [Architettura](./02-architettura.md) | Struttura dell'applicazione, ruoli utente, flussi principali |
 | [Pagine e Navigazione](./03-pagine.md) | Dettaglio di ogni pagina per ruolo utente |

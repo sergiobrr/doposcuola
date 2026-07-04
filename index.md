@@ -11,6 +11,7 @@ Documentazione completa del progetto per la realizzazione di un'applicazione mob
 
 | Documento | Descrizione |
 |-----------|-------------|
+| [Riassunto](./analisi/00-riassunto) | Panoramica sintetica dell'intero progetto |
 | [Stack Tecnologico](./analisi/01-stack-tecnologico) | Framework, librerie, servizi cloud e motivazioni delle scelte |
 | [Architettura](./analisi/02-architettura) | Struttura dell'applicazione, ruoli utente, flussi principali |
 | [Pagine e Navigazione](./analisi/03-pagine) | Dettaglio di ogni pagina per ruolo utente |
