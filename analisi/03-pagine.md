@@ -99,17 +99,6 @@ Operazione quotidiana principale: chi è presente oggi.
 - Navigazione a ritroso per consultare o correggere giorni precedenti
 - Riepilogo mensile presenze per studente (tabella export CSV)
 
-### Gestione Avvisi / Bacheca (`/teacher/avvisi`)
-Comunicazioni broadcast verso tutti o un sottogruppo di genitori/studenti.
-- Lista avvisi pubblicati con indicatore "letti da X/Y destinatari"
-- Toggle "Fissa in evidenza" per avvisi importanti
-- FAB: crea nuovo avviso
-
-**Crea/Modifica Avviso (`/teacher/avvisi/:id`)**
-- Titolo e testo (editor semplice)
-- Destinatari: tutti / solo genitori / solo studenti / selezione manuale per studente
-- Pubblica → notifica push ai destinatari (template `nuovo_avviso`)
-
 ### Gestione Pagamenti (`/teacher/pagamenti`)
 Panoramica finanziaria.
 - Riepilogo: incassato nel mese, in scadenza, scaduti
@@ -159,7 +148,6 @@ Vista rapida della situazione dei propri figli.
 - **Pulsante rapido "Segnala assenza oggi"** su ogni card figlio — apre un bottom sheet con campo motivazione opzionale e conferma con un tap. Non apre un thread di chat.
 - Badge notifiche non lette
 - Accesso rapido a comunicazioni con l'insegnante
-- Avvisi in evidenza dalla bacheca (massimo 2, con link "Vedi tutti")
 
 ### I Miei Figli (`/parent/figli`)
 Lista dei figli associati al genitore.
@@ -186,11 +174,6 @@ Lista dei figli associati al genitore.
 - Pagina statica con descrizione del servizio (testo, orari, modalità)
 - Riepilogo importo e tipo iscrizione
 - Pulsante "Prosegui" → apre Stripe Payment Sheet nativo
-
-### Bacheca Avvisi (`/parent/avvisi`)
-- Lista avvisi pubblicati dall'insegnante, ordinati per data (fissati in cima)
-- Badge con numero avvisi non letti
-- Click avviso → testo completo, segna automaticamente come letto
 
 ### Comunicazioni (`/parent/comunicazioni`)
 - Lista thread aperti dall'insegnante verso il genitore

@@ -50,8 +50,7 @@ interface NotificaTemplate {
 | `{{importo}}` | Importo pagamento (es. "€ 150,00") |
 | `{{dataScadenza}}` | Data scadenza pagamento |
 | `{{giorniMancanti}}` | Giorni mancanti all'evento/scadenza |
-| `{{creatoreEvento}}` | Chi ha creato l'evento (es. "il genitore Mario Rossi", "lo studente") |
-| `{{titoloAvviso}}` | Titolo dell'avviso in bacheca |
+| `{{creatoreEvento}}` | Chi ha creato l'evento (es. "il genitore Mario Rossi") |
 | `{{dataChiusura}}` | Data della chiusura/variazione orario |
 | `{{titoloChiusura}}` | Titolo della chiusura (es. "Ponte del 2 giugno") |
 
@@ -74,7 +73,6 @@ interface NotificaTemplate {
 | `evento_creato_da_genitore` | Genitore crea un evento per il figlio | teacher |
 | `assenza_segnalata` | Genitore segnala assenza del figlio | teacher |
 | `chiusura_programmata` | Insegnante aggiunge una chiusura nei prossimi 7 giorni | parent |
-| `nuovo_avviso` | Insegnante pubblica un avviso in bacheca | parent |
 
 ### Manuali (inviate direttamente dall'insegnante)
 

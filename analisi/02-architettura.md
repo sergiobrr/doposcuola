@@ -34,7 +34,6 @@ App
 │   ├── iscrizioni
 │   ├── calendario
 │   ├── studenti
-│   ├── avvisi
 │   ├── pagamenti
 │   ├── comunicazioni
 │   └── impostazioni
@@ -49,7 +48,6 @@ App
 │   │   └── [studentId]/calendario
 │   ├── pagamenti
 │   │   └── checkout/:iscrizioneId   (descrizione servizio + prosegui a Stripe)
-│   ├── avvisi
 │   ├── comunicazioni
 │   └── profilo
 │

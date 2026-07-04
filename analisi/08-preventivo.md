@@ -79,14 +79,13 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | Calendario — vista mensile/settimanale con libreria | 8h | 6h |
 | Calendario — CRUD eventi (assegna a studenti, tipo, materia) | 5h | 3.5h |
 | Calendario — eventi ricorrenti (serie, generazione occorrenze, override singola) | 8h | 6h |
-| Avvisi / Bacheca (lista + crea avviso con destinatari) | 5h | 3.5h |
 | Gestione Pagamenti (lista, filtri, export CSV) | 5h | 3.5h |
 | Comunicazioni — lista thread + badge | 4h | 3h |
 | Chat real-time (Firestore listener, invio, allegati fase 2) | 8h | 6h |
 | Impostazioni: Template Notifiche (CRUD con variabili) | 5h | 3.5h |
 | Impostazioni: Chiusure/Eccezioni calendario | 3h | 2h |
 | Impostazioni: Profilo insegnante | 2h | 1.5h |
-| **Totale Fase 4** | **90h** | **64h** |
+| **Totale Fase 4** | **85h** | **60.5h** |
 
 ---
 
@@ -94,15 +93,14 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 
 | Task | Solo | Con Claude |
 |------|------|-----------|
-| Dashboard (card figli, segnala assenza, avvisi in evidenza) | 5h | 3.5h |
+| Dashboard (card figli, segnala assenza) | 5h | 3.5h |
 | Iscrizione nuovo figlio (form + invio richiesta) | 4h | 3h |
 | Calendario figlio (sola lettura + crea evento + toggle permesso studente) | 5h | 3.5h |
 | Pagamenti (lista, Stripe Payment Sheet nativo, Customer Portal) | 7h | 5h |
 | Checkout: pagina descrizione servizio + prosegui a Stripe | 2h | 1h |
-| Bacheca Avvisi (lettura, segna letto) | 2h | 1.5h |
 | Comunicazioni — lista thread + risposta (riusa componenti chat) | 4h | 2.5h |
 | Profilo genitore (dati, cambio password, consenso notifiche) | 2h | 1.5h |
-| **Totale Fase 5** | **31h** | **21h** |
+| **Totale Fase 5** | **29h** | **19.5h** |
 
 ---
 
@@ -141,11 +139,11 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | 1 — Setup & Architettura | 18h | 12.5h | €312 |
 | 2 — Autenticazione | 14h | 10h | €250 |
 | 3 — Cloud Functions Backend | 33h | 23h | €575 |
-| 4 — Area Insegnante | 90h | 64h | €1.600 |
-| 5 — Area Genitore | 31h | 21h | €525 |
+| 4 — Area Insegnante | 85h | 60.5h | €1.512 |
+| 5 — Area Genitore | 29h | 19.5h | €487 |
 | 6 — Testing & Rifinitura | 27h | 22.5h | €562 |
 | 7 — Deploy & Release | 13h | 13h | €325 |
-| **TOTALE** | **226h** | **166h** | **€4.150** |
+| **TOTALE** | **219h** | **161h** | **€4.025** |
 
 ---
 
@@ -200,9 +198,9 @@ Totale ore: **166h → 21 weekend** (arrotondato per sicurezza).
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (166h × €25) | €4.150 |
+| Sviluppo (161h × €25) | €4.025 |
 | Buffer rischi (16h × €25) | €400 |
-| **Totale stimato** | **€4.550** |
+| **Totale stimato** | **€4.425** |
 
 ---
 
@@ -351,11 +349,11 @@ Firebase fornisce domini gratuiti (`*.web.app`, `*.firebaseapp.com`) sufficienti
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (con buffer) | €4.550 |
+| Sviluppo (con buffer) | €4.425 |
 | Google Play Store (una tantum) | €25 |
 | Apple Developer Program (1 anno) | €99 |
 | Dominio (opzionale, 1 anno) | €10 |
 | Firebase (12 mesi) | €0–216 |
-| **Totale primo anno** | **~€4.684–4.900** |
+| **Totale primo anno** | **~€4.559–4.775** |
 
 > Stripe non è incluso: le commissioni sono trattenute direttamente sul transato e non costituiscono una spesa separata dal servizio.

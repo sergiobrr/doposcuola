@@ -182,27 +182,6 @@ interface AssenzaGenitore {
 
 ---
 
-## `avvisi/{avvisoId}`
-
-Comunicazioni broadcast dell'insegnante verso tutti i genitori/studenti o un sottogruppo.
-
-```typescript
-interface Avviso {
-  id: string;
-  titolo: string;
-  testo: string;
-  createdByTeacherId: string;
-  destinatari: ('parent' | 'student')[];
-  studenteIds: string[];        // [] = tutti gli studenti attivi
-  lettoDa: string[];            // array di uid che hanno aperto l'avviso
-  fissato: boolean;             // avviso in evidenza in cima alla bacheca
-  createdAt: Timestamp;
-  updatedAt: Timestamp;
-}
-```
-
----
-
 ## `chiusure/{chiusuraId}`
 
 Eccezioni al calendario: festività, pause, variazioni orario temporanee.
