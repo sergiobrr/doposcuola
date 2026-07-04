@@ -26,5 +26,4 @@ Documentazione completa del progetto per la realizzazione di un'applicazione mob
 | Ruolo | Accesso |
 |-------|---------|
 | **Insegnante** | Gestione completa: iscrizioni, presenze, pagamenti, orari, eventi, notifiche, comunicazioni |
-| **Genitore** | Iscrizione figli, pagamenti, bacheca avvisi, comunicazioni (risposta), segnalazione assenze |
-| **Studente** | Solo lettura: orari, eventi, bacheca avvisi; creazione eventi se autorizzato |
+| **Genitore** | Iscrizione figli alle attività, pagamenti, comunicazioni (risposta), segnalazione assenze |

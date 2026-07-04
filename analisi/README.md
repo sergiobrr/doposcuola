@@ -29,10 +29,7 @@ Insegnante (admin)
   └── Gestione completa: iscrizioni, pagamenti, orari, eventi, notifiche, comunicazioni
 
 Genitore
-  └── Iscrizione figli, pagamenti, comunicazioni (solo risposta), calendario figlio
-
-Studente
-  └── Solo lettura: orari personali, eventi imminenti
+  └── Iscrizione figli alle attività, pagamenti, comunicazioni (solo risposta), segnalazione assenze
 ```
 
 ## Avanzamento
