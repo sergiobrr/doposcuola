@@ -34,7 +34,7 @@ interface User {
   uid: string;
   email: string;
   displayName: string;
-  role: 'teacher' | 'parent' | 'student';
+  role: 'teacher' | 'parent';
   telefono?: string;
   fcmTokens: string[];        // token push per ogni dispositivo
   createdAt: Timestamp;
@@ -56,22 +56,12 @@ interface Studente {
   scuola: string;
   parentIds: string[];        // uid dei genitori associati
   stato: 'in_attesa' | 'attivo' | 'sospeso' | 'terminato';
-  permessoEventi: PermessoEventi | null;
   note?: string;
   createdAt: Timestamp;
   updatedAt: Timestamp;
 }
 
-// null = nessun permesso concesso (default)
-interface PermessoEventi {
-  abilitato: boolean;
-  concessoDa: string;           // uid di chi ha concesso il permesso
-  concessoDaRuolo: 'teacher' | 'parent';
-  concessoAt: Timestamp;
-}
 ```
-
-Il permesso può essere concesso dall'**insegnante** oppure da uno dei **genitori** dello studente. Basta che uno dei due lo conceda. Può essere revocato solo da chi lo ha concesso oppure dall'insegnante (sempre).
 
 ---
 
@@ -143,13 +133,13 @@ interface Evento {
   maxIscrizioni?: number;     // sovrascrive SerieEventi.maxIscrizioniDefault se valorizzato
   isModificato: boolean;      // true se questa occorrenza è stata personalizzata rispetto alla serie
   createdBy: string;          // uid di chi ha creato l'evento
-  createdByRuolo: 'teacher' | 'parent' | 'student';
+  createdByRuolo: 'teacher' | 'parent';
   updatedAt: Timestamp;
   createdAt: Timestamp;
 }
 ```
 
-> Un genitore può creare eventi solo per i propri figli (`studenteIds` deve essere sottoinsieme di `studente.parentIds`). Uno studente può creare eventi solo per se stesso e solo se `permessoEventi.abilitato === true`. Solo l'insegnante può creare serie ricorrenti.
+> Un genitore può creare eventi solo per i propri figli (`studenteIds` deve essere sottoinsieme di `studente.parentIds`). Solo l'insegnante può creare serie ricorrenti.
 
 ---
 
@@ -371,13 +361,10 @@ match /eventi/{eventoId} {
     || resource.data.studenteIds.hasAny([request.auth.uid])
     || resource.data.studenteIds.size() == 0;
 
-  // Creazione: teacher sempre; genitore per i propri figli; studente solo se ha permesso
+  // Creazione: teacher sempre; genitore per i propri figli
   allow create: if request.auth.token.role == 'teacher'
     || (request.auth.token.role == 'parent'
-        && genitoreHaFigli(request.auth.uid, request.resource.data.studenteIds))
-    || (request.auth.token.role == 'student'
-        && studenteHaPermesso(request.auth.uid)
-        && request.resource.data.studenteIds == [request.auth.uid]);
+        && genitoreHaFigli(request.auth.uid, request.resource.data.studenteIds));
 
   // Modifica/cancellazione: solo chi ha creato o l'insegnante
   allow update, delete: if request.auth.token.role == 'teacher'
@@ -397,4 +384,4 @@ match /threads/{threadId} {
 }
 ```
 
-> Le funzioni `genitoreHaFigli` e `studenteHaPermesso` sono helper Firestore Rules che leggono il documento `studenti` per verificare rispettivamente che i `studenteIds` dell'evento siano figli del genitore, e che lo studente abbia `permessoEventi.abilitato == true`.
+> La funzione `genitoreHaFigli` è un helper Firestore Rules che legge il documento `studenti` per verificare che i `studenteIds` dell'evento siano figli del genitore.

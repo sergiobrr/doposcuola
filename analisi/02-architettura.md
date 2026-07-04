@@ -13,18 +13,7 @@ parent: Analisi
 | Ruolo | Come si crea | Permessi |
 |-------|--------------|----------|
 | `teacher` | Manualmente da admin Firebase | Accesso completo a tutto |
-| `parent` | Auto-registrazione | Iscrizioni, pagamenti, comunicazioni (risposta), calendario figli, creazione eventi per i propri figli, concessione permesso eventi ai figli, **segnalazione assenze**, bacheca avvisi (lettura) |
-| `student` | Creato dall'insegnante o dal genitore | Solo lettura di default; **creazione eventi propri** se permesso concesso da insegnante o genitore |
-
-### Permesso Creazione Eventi per Studenti
-
-Il permesso è un campo sul documento dello studente (`permessoEventi`), non un Custom Claim Firebase. Viene verificato:
-- Lato client: per mostrare/nascondere il pulsante "Crea evento"
-- Lato Firestore Security Rules: come vincolo hardened (non bypassabile)
-
-Può essere concesso/revocato da:
-- L'**insegnante** — sempre, da `/teacher/studenti/:id`
-- Un **genitore** — solo per i propri figli, da `/parent/figli/:studentId/calendario`
+| `parent` | Auto-registrazione | Iscrizioni, pagamenti, comunicazioni (risposta), calendario figli, creazione eventi per i propri figli, **segnalazione assenze**, bacheca avvisi (lettura) |
 
 I ruoli sono gestiti tramite **Firebase Custom Claims** impostati da una Cloud Function. Il token JWT contiene il claim `role`, letto dalla app al login per determinare il routing.
 
@@ -64,12 +53,6 @@ App
 │   ├── comunicazioni
 │   └── profilo
 │
-└── /student              (guard: role === 'student')
-    ├── calendario
-    ├── eventi
-    │   └── nuovo         (visibile solo se permessoEventi === true)
-    ├── avvisi
-    └── profilo
 ```
 
 ---
@@ -140,8 +123,8 @@ ComunicazioniStore → thread aperti, messaggi non letti
 7. Genitore apre /parent/pagamenti → preme "Paga ora"
 8. Pagina descrizione servizio (/parent/pagamenti/checkout/:iscrizioneId)
 9. Genitore preme "Prosegui" → Stripe Payment Sheet nativo
-8. Webhook Stripe → Cloud Function aggiorna stato su Firestore
-9. Studente diventa attivo → può accedere a /student
+10. Webhook Stripe → Cloud Function aggiorna stato su Firestore
+11. Studente diventa attivo (stato `attivo` su Firestore)
 ```
 
 ---

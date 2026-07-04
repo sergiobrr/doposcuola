@@ -33,7 +33,7 @@ interface NotificaTemplate {
   titolo: string;                       // supporta variabili {{...}}
   corpo: string;                        // supporta variabili {{...}}
   canali: ('push' | 'inApp')[];
-  destinatari: ('parent' | 'student')[]; // chi riceve
+  destinatari: 'parent'[];               // chi riceve
   attivo: boolean;
 }
 ```
@@ -63,20 +63,18 @@ interface NotificaTemplate {
 
 | Evento | Quando si attiva | Destinatari tipici |
 |--------|------------------|--------------------|
-| `evento_domani` | Ogni giorno alle 18:00, se c'è un evento il giorno dopo | parent + student |
-| `evento_tra_3_giorni` | Ogni giorno alle 18:00, se c'è un evento tra 3 giorni | parent + student |
+| `evento_domani` | Ogni giorno alle 18:00, se c'è un evento il giorno dopo | parent |
+| `evento_tra_3_giorni` | Ogni giorno alle 18:00, se c'è un evento tra 3 giorni | parent |
 | `pagamento_scaduto` | Il giorno della scadenza del pagamento | parent |
 | `pagamento_in_scadenza` | 7 giorni prima della scadenza | parent |
 | `pagamento_ricevuto` | Webhook Stripe: pagamento confermato | parent |
 | `iscrizione_approvata` | Insegnante approva l'iscrizione | parent |
 | `iscrizione_rifiutata` | Insegnante rifiuta l'iscrizione | parent |
 | `nuovo_messaggio` | Insegnante invia un messaggio in un thread | parent |
-| `evento_creato_da_studente` | Studente crea un evento (se ha il permesso) | teacher |
 | `evento_creato_da_genitore` | Genitore crea un evento per il figlio | teacher |
-| `permesso_eventi_concesso` | Insegnante o genitore concede il permesso allo studente | student |
 | `assenza_segnalata` | Genitore segnala assenza del figlio | teacher |
-| `chiusura_programmata` | Insegnante aggiunge una chiusura nei prossimi 7 giorni | parent + student |
-| `nuovo_avviso` | Insegnante pubblica un avviso in bacheca | parent e/o student (in base ai destinatari) |
+| `chiusura_programmata` | Insegnante aggiunge una chiusura nei prossimi 7 giorni | parent |
+| `nuovo_avviso` | Insegnante pubblica un avviso in bacheca | parent |
 
 ### Manuali (inviate direttamente dall'insegnante)
 
@@ -141,7 +139,7 @@ La pagina `/teacher/impostazioni/notifiche` mostra una lista di card, una per te
 │ Corpo:  "Ricorda a {{nomeStudente}} ..."         │
 │                                                  │
 │ Canali: [✓] Push  [✓] In-App                    │
-│ A:      [✓] Genitore  [✓] Studente              │
+│ A:      [✓] Genitore                             │
 │                                    [Modifica]    │
 └─────────────────────────────────────────────────┘
 ```

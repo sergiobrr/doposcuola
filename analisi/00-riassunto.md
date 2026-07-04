@@ -45,13 +45,6 @@ Si auto-registra:
 - Bacheca avvisi in lettura
 - Può concedere/revocare allo studente il permesso di creare eventi
 
-### Studente
-Creato dall'insegnante o dal genitore:
-- Calendario settimanale in sola lettura
-- Lista prossimi eventi
-- Bacheca avvisi in lettura
-- Può creare eventi solo se autorizzato da insegnante o genitore
-
 ---
 
 ## Funzionalità trasversali
@@ -87,12 +80,11 @@ Collezioni principali: `users`, `studenti`, `iscrizioni`, `eventi`, `presenze`, 
 | 3 | Cloud Functions + Stripe + notifiche + Security Rules | 23h | €575 |
 | 4 | Area insegnante completa | 64h | €1.600 |
 | 5 | Area genitore | 21h | €525 |
-| 6 | Area studente | 6.5h | €162 |
-| 7 | Test + bug fixing + performance | 22.5h | €562 |
-| 8 | Deploy App Store + Google Play | 13h | €325 |
-| **Totale** | | **172.5h** | **€4.312** |
+| 6 | Test + bug fixing + performance | 22.5h | €562 |
+| 7 | Deploy App Store + Google Play | 13h | €325 |
+| **Totale** | | **166h** | **€4.150** |
 
-Con buffer rischi: **€4.712**
+Con buffer rischi: **€4.550**
 
 **Inizio:** weekend del 5 luglio 2026 — **Fine stimata: novembre 2026**
 
@@ -102,7 +94,7 @@ Con buffer rischi: **€4.712**
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (con buffer) | €4.712 |
+| Sviluppo (con buffer) | €4.550 |
 | Google Play (una tantum) | €25 |
 | Apple Developer | €99/anno |
 | Firebase | €0–216/anno |

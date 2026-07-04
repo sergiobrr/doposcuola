@@ -106,19 +106,7 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 
 ---
 
-### Fase 6 — Area Studente
-
-| Task | Solo | Con Claude |
-|------|------|-----------|
-| Calendario studente (riusa CalendarioWeekComponent) | 3h | 2h |
-| Prossimi eventi (lista + guard permesso + crea evento) | 5h | 3.5h |
-| Bacheca Avvisi (riusa componente genitore) | 1h | 0.5h |
-| Profilo studente | 1h | 0.5h |
-| **Totale Fase 6** | **10h** | **6.5h** |
-
----
-
-### Fase 7 — Testing e Rifinitura
+### Fase 6 — Testing e Rifinitura
 
 | Task | Solo | Con Claude |
 |------|------|-----------|
@@ -128,11 +116,11 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | Test manuale su dispositivo fisico Android | 3h | 3h |
 | Bug fixing post-test + regressioni | 8h | 7h |
 | Ottimizzazioni performance (lazy load, immagini, Firestore indexes) | 4h | 3h |
-| **Totale Fase 7** | **27h** | **22.5h** |
+| **Totale Fase 6** | **27h** | **22.5h** |
 
 ---
 
-### Fase 8 — Deploy e Release
+### Fase 7 — Deploy e Release
 
 | Task | Solo | Con Claude |
 |------|------|-----------|
@@ -140,7 +128,7 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | Configurazione Stripe production (chiavi live, webhook URL prod) | 2h | 2h |
 | Build iOS + certificati + App Store Connect | 5h | 5h |
 | Build Android + firma APK + Google Play Console | 4h | 4h |
-| **Totale Fase 8** | **13h** | **13h** |
+| **Totale Fase 7** | **13h** | **13h** |
 
 > Le ore di deploy non si riducono con Claude: sono operazioni manuali su portali esterni (Apple, Google, Stripe Dashboard).
 
@@ -155,17 +143,16 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | 3 — Cloud Functions Backend | 33h | 23h | €575 |
 | 4 — Area Insegnante | 90h | 64h | €1.600 |
 | 5 — Area Genitore | 31h | 21h | €525 |
-| 6 — Area Studente | 10h | 6.5h | €162 |
-| 7 — Testing & Rifinitura | 27h | 22.5h | €562 |
-| 8 — Deploy & Release | 13h | 13h | €325 |
-| **TOTALE** | **236h** | **172.5h** | **€4.312** |
+| 6 — Testing & Rifinitura | 27h | 22.5h | €562 |
+| 7 — Deploy & Release | 13h | 13h | €325 |
+| **TOTALE** | **226h** | **166h** | **€4.150** |
 
 ---
 
 ## Pianificazione Weekend
 
 Ogni weekend = 8h (4h sabato + 4h domenica).  
-Totale ore: **165.5h → 21 weekend** (arrotondato per sicurezza).
+Totale ore: **166h → 21 weekend** (arrotondato per sicurezza).
 
 | Weekend | Date (lun inizio) | Fase | Obiettivo |
 |---------|------------------|------|-----------|
@@ -185,11 +172,11 @@ Totale ore: **165.5h → 21 weekend** (arrotondato per sicurezza).
 | 14 | 04 ott 2026 | F4 | Impostazioni (template notifiche, chiusure, profilo) |
 | 15 | 11 ott 2026 | F5 | Dashboard genitore + Iscrizione figlio |
 | 16 | 18 ott 2026 | F5 | Calendario figlio + Pagamenti Stripe mobile |
-| 17 | 25 ott 2026 | F5-F6 | Avvisi genitore + Comunicazioni genitore + Area Studente |
-| 18 | 01 nov 2026 | F7 | Unit test Store + Cloud Functions |
-| 19 | 08 nov 2026 | F7 | Test su dispositivo iOS + Android + bug fixing |
-| 20 | 15 nov 2026 | F7 | Performance, regressioni, rifinitura UI |
-| 21 | 22 nov 2026 | F8 | Deploy production, App Store, Google Play |
+| 17 | 25 ott 2026 | F5 | Avvisi genitore + Comunicazioni genitore |
+| 18 | 01 nov 2026 | F6 | Unit test Store + Cloud Functions |
+| 19 | 08 nov 2026 | F6 | Test su dispositivo iOS + Android + bug fixing |
+| 20 | 15 nov 2026 | F6 | Performance, regressioni, rifinitura UI |
+| 21 | 22 nov 2026 | F7 | Deploy production, App Store, Google Play |
 
 **Fine stimata: weekend del 22-23 novembre 2026**  
 **Durata totale: ~5 mesi** (luglio → novembre 2026)
@@ -213,9 +200,9 @@ Totale ore: **165.5h → 21 weekend** (arrotondato per sicurezza).
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (172.5h × €25) | €4.312 |
+| Sviluppo (166h × €25) | €4.150 |
 | Buffer rischi (16h × €25) | €400 |
-| **Totale stimato** | **€4.712** |
+| **Totale stimato** | **€4.550** |
 
 ---
 
@@ -364,11 +351,11 @@ Firebase fornisce domini gratuiti (`*.web.app`, `*.firebaseapp.com`) sufficienti
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (con buffer) | €4.712 |
+| Sviluppo (con buffer) | €4.550 |
 | Google Play Store (una tantum) | €25 |
 | Apple Developer Program (1 anno) | €99 |
 | Dominio (opzionale, 1 anno) | €10 |
 | Firebase (12 mesi) | €0–216 |
-| **Totale primo anno** | **~€4.846–5.062** |
+| **Totale primo anno** | **~€4.684–4.900** |
 
 > Stripe non è incluso: le commissioni sono trattenute direttamente sul transato e non costituiscono una spesa separata dal servizio.

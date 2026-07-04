@@ -35,7 +35,6 @@ Livello 3 — NgRx SignalStore (app-wide)
 /auth          → login, registrazione, recupero password
 /teacher/*     → area insegnante (guard: ruolo TEACHER)
 /parent/*      → area genitore (guard: ruolo PARENT)
-/student/*     → area studente (guard: ruolo STUDENT)
 ```
 
 ---

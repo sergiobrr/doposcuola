@@ -26,7 +26,6 @@ Il sistema di chat è **unidirezionale nell'iniziativa**:
 
 - L'**insegnante** è l'unico che può **aprire** un nuovo thread di conversazione
 - Il **genitore** può solo **rispondere** nei thread già aperti verso di lui
-- Lo **studente** non ha accesso alle comunicazioni (solo notifiche passive)
 
 Questo evita che l'insegnante sia sommerso da messaggi spontanei e mantiene la comunicazione strutturata e tracciabile.
 
@@ -141,12 +140,12 @@ export const ComunicazioniStore = signalStore(
 
 ## Regole di Accesso
 
-| Azione | Insegnante | Genitore | Studente |
-|--------|-----------|----------|----------|
-| Crea thread | ✅ | ❌ | ❌ |
-| Legge thread | ✅ (tutti) | ✅ (solo i propri) | ❌ |
-| Scrive messaggio | ✅ | ✅ (solo thread propri) | ❌ |
-| Archivia thread | ✅ | ❌ | ❌ |
+| Azione | Insegnante | Genitore |
+|--------|-----------|----------|
+| Crea thread | ✅ | ❌ |
+| Legge thread | ✅ (tutti) | ✅ (solo i propri) |
+| Scrive messaggio | ✅ | ✅ (solo thread propri) |
+| Archivia thread | ✅ | ❌ |
 
 Queste regole sono imposte sia nelle Firestore Security Rules che nei guard lato client.
 

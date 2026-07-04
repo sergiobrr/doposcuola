@@ -62,7 +62,6 @@ Elenco completo degli studenti attivi.
 - Dati anagrafici
 - Orario settimanale con editor (aggiunta/rimozione slot)
 - Lista eventi assegnati (con indicazione di chi li ha creati: insegnante / genitore / studente)
-- Toggle "Permetti allo studente di creare eventi" con data concessione
 - **Note private** — area visibile solo all'insegnante: lista note con timestamp, aggiungi/modifica/elimina
 - Storico presenze mensile (grafico o tabella compatta)
 - Storico comunicazioni con i genitori
@@ -177,8 +176,6 @@ Lista dei figli associati al genitore.
 - Evidenzia interrogazioni e compiti in classe
 - **FAB "Aggiungi evento"** — il genitore può sempre creare eventi per il proprio figlio
 - Click evento → dettaglio (titolo, materia, descrizione, chi lo ha creato)
-- Toggle "Permetti a [nome figlio] di creare eventi autonomamente" — genitore può concedere/revocare il permesso allo studente
-- Se il permesso è già stato concesso dall'insegnante, il toggle è visibile ma bloccato (solo l'insegnante può revocarlo in quel caso)
 
 ### Pagamenti (`/parent/pagamenti`)
 - Lista pagamenti: data, importo, stato, descrizione
@@ -212,45 +209,13 @@ Lista dei figli associati al genitore.
 
 ---
 
-## Area Studente (`/student`)
-
-### Calendario Studente (`/student/calendario`)
-Vista principale e unica dello studente. Solo lettura.
-- Vista settimanale con gli slot di doposcuola
-- Evidenzia eventi importanti (interrogazione = rosso, compito = arancione)
-- Click giorno → lista eventi del giorno
-
-### Prossimi Eventi (`/student/eventi`)
-Lista cronologica degli eventi imminenti assegnati allo studente.
-- Tipo evento con icona e colore
-- Titolo, materia, data, chi ha creato l'evento (icona discreta)
-- Ordinati per data crescente
-- **FAB "Aggiungi evento"** — visibile solo se `permessoEventi.abilitato === true`
-
-**Crea Evento (`/student/eventi/nuovo`)** — solo se permesso concesso
-- Accessibile solo se il guard verifica `permessoEventi.abilitato` sul profilo studente
-- Form semplificato: tipo, titolo, materia, data, descrizione opzionale
-- Lo studente può creare eventi solo per se stesso
-- Salva → notifica all'insegnante (template `evento_creato_da_studente`)
-
-### Bacheca Avvisi (`/student/avvisi`)
-- Lista avvisi che l'insegnante ha indirizzato anche agli studenti
-- Solo lettura, ordinati per data
-- Avvisi fissati sempre in cima
-
-### Profilo Studente (`/student/profilo`)
-- Solo visualizzazione dei dati (nome, classe)
-- Gestione consenso notifiche push
-
----
-
 ## Componenti Condivisi Notevoli
 
 | Componente | Utilizzo |
 |------------|----------|
 | `NotificheBadgeComponent` | Badge nell'header con contatore push non lette |
 | `EventoCardComponent` | Card riusabile per visualizzare un evento |
-| `CalendarioWeekComponent` | Vista settimanale condivisa tra tutti i ruoli |
+| `CalendarioWeekComponent` | Vista settimanale condivisa tra insegnante e genitore |
 | `ChatMessageComponent` | Bolla messaggio nella chat |
 | `PagamentoStatusBadgeComponent` | Badge colorato stato pagamento |
 | `StudenteCardComponent` | Card riassuntiva studente |
