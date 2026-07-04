@@ -159,7 +159,7 @@ Lista dei figli associati al genitore.
 
 **Iscrizione Nuovo Figlio (`/parent/figli/iscrizione`)**
 - Form dati studente: nome, cognome, data nascita, classe, scuola
-- Seleziona tipo iscrizione (mensile, trimestrale, annuale)
+- Seleziona tipo iscrizione (settimanale, mensile)
 - Conferma → richiesta inviata all'insegnante
 
 **Calendario Figlio (`/parent/figli/:studentId/calendario`)**

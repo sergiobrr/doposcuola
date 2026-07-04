@@ -21,9 +21,8 @@ I pagamenti sono gestiti interamente tramite **Stripe**, senza che i dati della 
 
 | Tipo | Meccanismo Stripe | Note |
 |------|-------------------|------|
+| Settimanale | Subscription (weekly) | Rinnovo automatico |
 | Mensile | Subscription (monthly) | Rinnovo automatico |
-| Trimestrale | Subscription (quarterly) | Rinnovo automatico |
-| Annuale | Payment Intent (one-time) | O Subscription annual |
 
 ---
 

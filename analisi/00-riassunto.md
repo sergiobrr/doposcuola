@@ -60,8 +60,7 @@ Creato dall'insegnante o dal genitore:
 Template configurabili dall'insegnante con variabili `{{nomeStudente}}`, `{{data}}`, ecc. Trigger automatici via Cloud Functions: evento domani, pagamento in scadenza, iscrizione approvata, nuova assenza segnalata, nuovo avviso, ecc.
 
 ### Pagamenti Stripe
-- Mensile/trimestrale → Subscription con rinnovo automatico
-- Annuale → Payment Intent one-time
+- Settimanale/mensile → Subscription con rinnovo automatico
 - Rimborsi gestiti dalla Stripe Dashboard (non nell'app)
 - Customer Portal per il genitore (cambia carta, scarica ricevute)
 - Webhook → Cloud Function → aggiorna Firestore

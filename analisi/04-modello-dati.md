@@ -84,7 +84,7 @@ interface Iscrizione {
   parentId: string;
   statoIscrizione: 'in_attesa' | 'approvata' | 'rifiutata';
   statoPagamento: 'non_pagato' | 'pagato' | 'scaduto' | 'rimborsato';
-  tipoIscrizione: 'mensile' | 'trimestrale' | 'annuale';
+  tipoIscrizione: 'settimanale' | 'mensile';
   importo: number;            // in centesimi (per Stripe)
   stripeCustomerId?: string;
   stripeSubscriptionId?: string;
