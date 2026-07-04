@@ -78,6 +78,7 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | Profilo Studente (dati, orario editor, permessi, note private, storico) | 12h | 8.5h |
 | Calendario — vista mensile/settimanale con libreria | 8h | 6h |
 | Calendario — CRUD eventi (assegna a studenti, tipo, materia) | 5h | 3.5h |
+| Calendario — eventi ricorrenti (serie, generazione occorrenze, override singola) | 8h | 6h |
 | Avvisi / Bacheca (lista + crea avviso con destinatari) | 5h | 3.5h |
 | Gestione Pagamenti (lista, filtri, export CSV) | 5h | 3.5h |
 | Comunicazioni — lista thread + badge | 4h | 3h |
@@ -85,7 +86,7 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | Impostazioni: Template Notifiche (CRUD con variabili) | 5h | 3.5h |
 | Impostazioni: Chiusure/Eccezioni calendario | 3h | 2h |
 | Impostazioni: Profilo insegnante | 2h | 1.5h |
-| **Totale Fase 4** | **82h** | **58h** |
+| **Totale Fase 4** | **90h** | **64h** |
 
 ---
 
@@ -151,12 +152,12 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | 1 — Setup & Architettura | 18h | 12.5h | €312 |
 | 2 — Autenticazione | 14h | 10h | €250 |
 | 3 — Cloud Functions Backend | 33h | 23h | €575 |
-| 4 — Area Insegnante | 82h | 58h | €1.450 |
+| 4 — Area Insegnante | 90h | 64h | €1.600 |
 | 5 — Area Genitore | 29h | 20h | €500 |
 | 6 — Area Studente | 10h | 6.5h | €162 |
 | 7 — Testing & Rifinitura | 27h | 22.5h | €562 |
 | 8 — Deploy & Release | 13h | 13h | €325 |
-| **TOTALE** | **226h** | **165.5h** | **€4.137** |
+| **TOTALE** | **234h** | **171.5h** | **€4.287** |
 
 ---
 
@@ -211,9 +212,9 @@ Totale ore: **165.5h → 21 weekend** (arrotondato per sicurezza).
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (165.5h × €25) | €4.137 |
+| Sviluppo (171.5h × €25) | €4.287 |
 | Buffer rischi (16h × €25) | €400 |
-| **Totale stimato** | **€4.537** |
+| **Totale stimato** | **€4.687** |
 
 ---
 
@@ -362,11 +363,11 @@ Firebase fornisce domini gratuiti (`*.web.app`, `*.firebaseapp.com`) sufficienti
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (con buffer) | €4.537 |
+| Sviluppo (con buffer) | €4.687 |
 | Google Play Store (una tantum) | €25 |
 | Apple Developer Program (1 anno) | €99 |
 | Dominio (opzionale, 1 anno) | €10 |
 | Firebase (12 mesi) | €0–216 |
-| **Totale primo anno** | **~€4.671–4.887** |
+| **Totale primo anno** | **~€4.821–5.037** |
 
 > Stripe non è incluso: le commissioni sono trattenute direttamente sul transato e non costituiscono una spesa separata dal servizio.

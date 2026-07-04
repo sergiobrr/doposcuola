@@ -80,7 +80,17 @@ Vista del calendario condiviso con tutti gli eventi.
 - Titolo, descrizione, materia
 - Data e ora
 - Assegna a: tutti gli studenti o selezione manuale
+- Numero massimo iscrizioni (capacità dell'occorrenza)
+- Toggle "Evento ricorrente" — se attivo:
+  - Cadenza: settimanale / mensile
+  - Data fine (opzionale; se assente le occorrenze vengono generate a 3 mesi)
+  - Numero massimo iscrizioni default per tutta la serie
 - Salva → notifica automatica ai destinatari (se template attivo)
+
+**Modifica occorrenza singola vs. serie**
+Quando l'insegnante apre un evento che fa parte di una serie, viene chiesto:
+- "Modifica solo questa occorrenza" → aggiorna il documento evento, imposta `isModificato = true`
+- "Modifica tutta la serie" → aggiorna `serieEventi` e rigenera le occorrenze future non modificate
 
 ### Registro Presenze (`/teacher/presenze`)
 Operazione quotidiana principale: chi è presente oggi.

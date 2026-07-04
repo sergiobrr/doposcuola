@@ -98,9 +98,36 @@ interface Iscrizione {
 
 ---
 
+## `serieEventi/{serieId}`
+
+Serie di eventi ricorrenti, creabili solo dall'insegnante. Alla creazione, una Cloud Function genera le singole occorrenze come documenti in `eventi/`.
+
+```typescript
+interface SerieEventi {
+  id: string;
+  tipo: 'interrogazione' | 'compito_in_classe' | 'uscita' | 'altro';
+  titolo: string;
+  descrizione?: string;
+  materia?: string;
+  studenteIds: string[];          // [] = tutti gli studenti
+  cadenza: 'settimanale' | 'mensile';
+  dataInizio: Timestamp;
+  dataFine?: Timestamp;           // null = serie aperta (occorrenze generate a 3 mesi)
+  oraInizio: string;              // "14:30"
+  maxIscrizioniDefault: number;   // capacità massima per ogni occorrenza
+  createdBy: string;              // uid insegnante
+  createdAt: Timestamp;
+  updatedAt: Timestamp;
+}
+```
+
+> Quando l'insegnante modifica la serie, vengono aggiornate solo le occorrenze future con `isModificato === false`. Le occorrenze già personalizzate non vengono toccate.
+
+---
+
 ## `eventi/{eventoId}`
 
-Interrogazioni, compiti in classe, uscite, ricorrenze. Possono essere creati dall'insegnante, da un genitore per il proprio figlio, o dallo studente stesso se ha il permesso.
+Interrogazioni, compiti in classe, uscite, ricorrenze. Possono essere creati dall'insegnante (anche come occorrenza di una serie), da un genitore per il proprio figlio, o dallo studente stesso se ha il permesso.
 
 ```typescript
 interface Evento {
@@ -112,6 +139,9 @@ interface Evento {
   studenteIds: string[];      // a chi è assegnato ([] = tutti gli studenti)
   materia?: string;
   completato: boolean;
+  serieId?: string;           // valorizzato se l'evento fa parte di una serie ricorrente
+  maxIscrizioni?: number;     // sovrascrive SerieEventi.maxIscrizioniDefault se valorizzato
+  isModificato: boolean;      // true se questa occorrenza è stata personalizzata rispetto alla serie
   createdBy: string;          // uid di chi ha creato l'evento
   createdByRuolo: 'teacher' | 'parent' | 'student';
   updatedAt: Timestamp;
@@ -119,7 +149,7 @@ interface Evento {
 }
 ```
 
-> Un genitore può creare eventi solo per i propri figli (`studenteIds` deve essere sottoinsieme di `studente.parentIds`). Uno studente può creare eventi solo per se stesso e solo se `permessoEventi.abilitato === true`.
+> Un genitore può creare eventi solo per i propri figli (`studenteIds` deve essere sottoinsieme di `studente.parentIds`). Uno studente può creare eventi solo per se stesso e solo se `permessoEventi.abilitato === true`. Solo l'insegnante può creare serie ricorrenti.
 
 ---
 
@@ -352,6 +382,11 @@ match /eventi/{eventoId} {
   // Modifica/cancellazione: solo chi ha creato o l'insegnante
   allow update, delete: if request.auth.token.role == 'teacher'
     || resource.data.createdBy == request.auth.uid;
+}
+
+// Serie eventi: solo l'insegnante
+match /serieEventi/{serieId} {
+  allow read, write: if request.auth.token.role == 'teacher';
 }
 
 // Chat: solo i partecipanti del thread possono leggere
