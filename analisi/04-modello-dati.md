@@ -72,6 +72,8 @@ interface Iscrizione {
   id: string;
   studenteId: string;
   parentId: string;
+  serieId: string;             // attività a cui si iscrive
+  eventoId: string;            // occorrenza specifica selezionata nel calendario
   statoIscrizione: 'in_attesa' | 'approvata' | 'rifiutata';
   statoPagamento: 'non_pagato' | 'pagato' | 'scaduto' | 'rimborsato';
   tipoIscrizione: 'settimanale' | 'mensile';

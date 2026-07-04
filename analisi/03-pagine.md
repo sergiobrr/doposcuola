@@ -142,27 +142,35 @@ Lista e configurazione dei template. Vedi [Notifiche](./05-notifiche.md).
 
 ## Area Genitore (`/parent`)
 
-### Dashboard Genitore (`/parent/dashboard`)
-Vista rapida della situazione dei propri figli.
-- Card per ogni figlio: nome, prossimo evento, stato pagamento
-- **Pulsante rapido "Segnala assenza oggi"** su ogni card figlio — apre un bottom sheet con campo motivazione opzionale e conferma con un tap. Non apre un thread di chat.
-- Badge notifiche non lette
+### Lista Attività (`/parent/attivita`)
+Prima schermata dopo il login. Mostra le tipologie di attività disponibili, cioè le serie di eventi ricorrenti create dall'insegnante.
+- Card per ogni attività: titolo, cadenza (settimanale/mensile), orario, posti disponibili
+- Badge notifiche non lette nell'header
 - Accesso rapido a comunicazioni con l'insegnante
 
-### I Miei Figli (`/parent/figli`)
-Lista dei figli associati al genitore.
-- Card figlio: nome, classe, stato iscrizione
-- Pulsante "Iscrivi nuovo figlio"
+**Calendario Attività (`/parent/attivita/:serieId/calendario`)**
+- Vista mensile / settimanale delle occorrenze di quella attività
+- Ogni slot mostra: data, ora, posti rimasti (es. "3/8")
+- Click su uno slot → modale iscrizione figlio
 
-**Iscrizione Nuovo Figlio (`/parent/figli/iscrizione`)**
-- Form dati studente: nome, cognome, data nascita, classe, scuola
-- Seleziona tipo iscrizione (settimanale, mensile)
-- Conferma → richiesta inviata all'insegnante
+**Modale Iscrizione**
+- Lista dei figli registrati dal genitore
+- Selezione del figlio da iscrivere
+- Riepilogo: attività, slot selezionato, tipo iscrizione (settimanale/mensile), importo
+- Conferma → crea iscrizione → redirect a `/parent/pagamenti/checkout/:iscrizioneId`
+
+### I Miei Figli (`/parent/figli`)
+Gestione dei profili anagrafici dei figli. Separato dal flusso di iscrizione alle attività.
+- Card figlio: nome, classe, attività in corso
+- Pulsante "Aggiungi figlio"
+
+**Aggiungi Figlio (`/parent/figli/nuovo`)**
+- Form dati: nome, cognome, data nascita, classe, scuola
+- Salva → profilo disponibile per le iscrizioni alle attività
 
 **Calendario Figlio (`/parent/figli/:studentId/calendario`)**
-- Vista mensile/settimanale
-- Evidenzia interrogazioni e compiti in classe
-- **FAB "Aggiungi evento"** — il genitore può sempre creare eventi per il proprio figlio
+- Vista mensile/settimanale delle attività a cui il figlio è iscritto
+- **FAB "Aggiungi evento"** — il genitore può creare eventi per il proprio figlio
 - Click evento → dettaglio (titolo, materia, descrizione, chi lo ha creato)
 
 ### Pagamenti (`/parent/pagamenti`)

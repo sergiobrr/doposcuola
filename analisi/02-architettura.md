@@ -42,12 +42,13 @@ App
 │       └── profilo
 │
 ├── /parent               (guard: role === 'parent')
-│   ├── dashboard
-│   ├── figli
-│   │   ├── iscrizione
+│   ├── attivita                          (lista serieEventi — landing dopo login)
+│   │   └── :serieId/calendario           (calendario occorrenze + modale iscrizione)
+│   ├── figli                             (gestione profili figli)
+│   │   ├── nuovo
 │   │   └── [studentId]/calendario
 │   ├── pagamenti
-│   │   └── checkout/:iscrizioneId   (descrizione servizio + prosegui a Stripe)
+│   │   └── checkout/:iscrizioneId
 │   ├── comunicazioni
 │   └── profilo
 │
@@ -114,12 +115,12 @@ ComunicazioniStore → thread aperti, messaggi non letti
 ```
 1. Genitore si registra (/auth/register)
 2. Cloud Function imposta claim role=parent
-3. Genitore crea profilo figlio (/parent/figli/iscrizione)
-4. Insegnante riceve notifica nuova iscrizione in attesa
-5. Insegnante approva/rifiuta (/teacher/iscrizioni)
-6. Se approvata → Stripe Payment Intent creato
-7. Genitore apre /parent/pagamenti → preme "Paga ora"
-8. Pagina descrizione servizio (/parent/pagamenti/checkout/:iscrizioneId)
+3. Genitore aggiunge profilo figlio (/parent/figli/nuovo)
+4. Genitore sfoglia le attività disponibili (/parent/attivita)
+5. Seleziona un'attività → vede il calendario occorrenze
+6. Clicca su uno slot → modale: seleziona figlio + conferma
+7. Crea iscrizione → redirect a /parent/pagamenti/checkout/:iscrizioneId
+8. Pagina descrizione servizio + riepilogo importo
 9. Genitore preme "Prosegui" → Stripe Payment Sheet nativo
 10. Webhook Stripe → Cloud Function aggiorna stato su Firestore
 11. Studente diventa attivo (stato `attivo` su Firestore)

@@ -93,14 +93,14 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 
 | Task | Solo | Con Claude |
 |------|------|-----------|
-| Dashboard (card figli, segnala assenza) | 5h | 3.5h |
-| Iscrizione nuovo figlio (form + invio richiesta) | 4h | 3h |
-| Calendario figlio (sola lettura + crea evento + toggle permesso studente) | 5h | 3.5h |
+| Lista attività (landing post-login, card serieEventi, posti disponibili) | 4h | 3h |
+| Calendario attività (occorrenze, slot, modale iscrizione figlio) | 7h | 5h |
+| Gestione figli (lista profili, aggiungi figlio, calendario figlio) | 4h | 3h |
 | Pagamenti (lista, Stripe Payment Sheet nativo, Customer Portal) | 7h | 5h |
 | Checkout: pagina descrizione servizio + prosegui a Stripe | 2h | 1h |
 | Comunicazioni — lista thread + risposta (riusa componenti chat) | 4h | 2.5h |
 | Profilo genitore (dati, cambio password, consenso notifiche) | 2h | 1.5h |
-| **Totale Fase 5** | **29h** | **19.5h** |
+| **Totale Fase 5** | **30h** | **20.5h** |
 
 ---
 
@@ -140,10 +140,10 @@ La colonna "Solo" serve come riferimento; il preventivo reale è la colonna **"C
 | 2 — Autenticazione | 14h | 10h | €250 |
 | 3 — Cloud Functions Backend | 33h | 23h | €575 |
 | 4 — Area Insegnante | 85h | 60.5h | €1.512 |
-| 5 — Area Genitore | 29h | 19.5h | €487 |
+| 5 — Area Genitore | 30h | 20.5h | €512 |
 | 6 — Testing & Rifinitura | 27h | 22.5h | €562 |
 | 7 — Deploy & Release | 13h | 13h | €325 |
-| **TOTALE** | **219h** | **161h** | **€4.025** |
+| **TOTALE** | **220h** | **162h** | **€4.050** |
 
 ---
 
@@ -198,9 +198,9 @@ Totale ore: **166h → 21 weekend** (arrotondato per sicurezza).
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (161h × €25) | €4.025 |
+| Sviluppo (162h × €25) | €4.050 |
 | Buffer rischi (16h × €25) | €400 |
-| **Totale stimato** | **€4.425** |
+| **Totale stimato** | **€4.450** |
 
 ---
 
@@ -349,11 +349,11 @@ Firebase fornisce domini gratuiti (`*.web.app`, `*.firebaseapp.com`) sufficienti
 
 | Voce | Importo |
 |------|---------|
-| Sviluppo (con buffer) | €4.425 |
+| Sviluppo (con buffer) | €4.450 |
 | Google Play Store (una tantum) | €25 |
 | Apple Developer Program (1 anno) | €99 |
 | Dominio (opzionale, 1 anno) | €10 |
 | Firebase (12 mesi) | €0–216 |
-| **Totale primo anno** | **~€4.559–4.775** |
+| **Totale primo anno** | **~€4.584–4.800** |
 
 > Stripe non è incluso: le commissioni sono trattenute direttamente sul transato e non costituiscono una spesa separata dal servizio.
